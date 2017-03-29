@@ -10,14 +10,14 @@ for (var i=0 ; i<10 ; i++) {
 			document.getElementById('cell-c'+j+'-l'+i).className = 'blanc';
 		}
 		switch (i){
-			case 0 : document.write('<img id="pionNoir" src="pionNoir.png">'); break ; 
-			case 1 : document.write('<img id="pionNoir" src="pionNoir.png">'); break ; 
-			case 2 : document.write('<img id="pionNoir" src="pionNoir.png">'); break ; 
-			case 3 : document.write('<img id="pionNoir" src="pionNoir.png">'); break ; 
-			case 6 : document.write('<img id="pionBlanc" src="pionBlanc.png">'); break ; 
-			case 7 : document.write('<img id="pionBlanc" src="pionBlanc.png">'); break ;
-			case 8 : document.write('<img id="pionBlanc" src="pionBlanc.png">'); break ; 
-			case 9 : document.write('<img id="pionBlanc" src="pionBlanc.png">'); break ;  
+			case 0 : if ((i+j)%2 !=0) document.write('<img id="pionNoir" src="pionNoir.png">'); break ; 
+			case 1 : if((i+j)%2 !=0) document.write('<img id="pionNoir" src="pionNoir.png">'); break ; 
+			case 2 : if((i+j)%2 !=0) document.write('<img id="pionNoir" src="pionNoir.png">'); break ; 
+			case 3 : if((i+j)%2 !=0) document.write('<img id="pionNoir" src="pionNoir.png">'); break ; 
+			case 6 : if((i+j)%2 !=0) document.write('<img id="pionBlanc" src="pionBlanc.png">'); break ; 
+			case 7 : if((i+j)%2 !=0) document.write('<img id="pionBlanc" src="pionBlanc.png">'); break ;
+			case 8 : if((i+j)%2 !=0) document.write('<img id="pionBlanc" src="pionBlanc.png">'); break ; 
+			case 9 : if((i+j)%2 !=0) document.write('<img id="pionBlanc" src="pionBlanc.png">'); break ;  
 		}
 	}
 }
