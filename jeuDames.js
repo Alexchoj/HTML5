@@ -10,16 +10,15 @@ for (var i=0 ; i<10 ; i++) {
 			document.getElementById('cell-c'+j+'-l'+i).className = 'blanc';
 		}
 		switch (i){
-			case 0 : if ((i+j)%2 !=0) document.write('<img id="pionNoir" src="pionNoir.png">'); break ; 
-			case 1 : if((i+j)%2 !=0) document.write('<img id="pionNoir" src="pionNoir.png">'); break ; 
-			case 2 : if((i+j)%2 !=0) document.write('<img id="pionNoir" src="pionNoir.png">'); break ; 
-			case 3 : if((i+j)%2 !=0) document.write('<img id="pionNoir" src="pionNoir.png">'); break ; 
-			case 6 : if((i+j)%2 !=0) document.write('<img id="pionBlanc" src="pionBlanc.png">'); break ; 
-			case 7 : if((i+j)%2 !=0) document.write('<img id="pionBlanc" src="pionBlanc.png">'); break ;
-			case 8 : if((i+j)%2 !=0) document.write('<img id="pionBlanc" src="pionBlanc.png">'); break ; 
-			case 9 : if((i+j)%2 !=0) document.write('<img id="pionBlanc" src="pionBlanc.png">'); break ;  
+			case 0 : if ((i+j)%2 !=0) document.write('<img id="pionNoir'+(i+1)+(j+1)+'" src="pionNoir.png" height="43px" width="43px">'); break ; 
+			case 1 : if ((i+j)%2 !=0) document.write('<img id="pionNoir'+(i+1)+(j+1)+'" src="pionNoir.png" height="43px" width="43px">'); break ; 
+			case 2 : if ((i+j)%2 !=0) document.write('<img id="pionNoir'+(i+1)+(j+1)+'" src="pionNoir.png" height="43px" width="43px">'); break ; 
+			case 3 : if ((i+j)%2 !=0) document.write('<img id="pionNoir'+(i+1)+(j+1)+'" src="pionNoir.png" height="43px" width="43px">'); break ; 
+			case 6 : if ((i+j)%2 !=0) document.write('<img id="pionBlanc'+(i+1)+(j+1)+'" src="pionBlanc.png" height="43px" width="43px">'); break ; 
+			case 7 : if ((i+j)%2 !=0) document.write('<img id="pionBlanc'+(i+1)+(j+1)+'" src="pionBlanc.png" height="43px" width="43px">'); break ;
+			case 8 : if ((i+j)%2 !=0) document.write('<img id="pionBlanc'+(i+1)+(j+1)+'" src="pionBlanc.png" height="43px" width="43px">'); break ; 
+			case 9 : if ((i+j)%2 !=0) document.write('<img id="pionBlanc'+(i+1)+(j+1)+'" src="pionBlanc.png" height="43px" width="43px">'); break ;  
 		}
 	}
 }
 document.write("</table>"); 
-
