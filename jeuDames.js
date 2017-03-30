@@ -20,9 +20,17 @@ for (var i=0 ; i<10 ; i++) {
 			case 8 : if ((i+j)%2 !=0) document.write('<img id="pionBlanc'+(i+1)+(j+1)+'" src="pionBlanc.png" height="43px" width="43px">'); break ; 
 			case 9 : if ((i+j)%2 !=0) document.write('<img id="pionBlanc'+(i+1)+(j+1)+'" src="pionBlanc.png" height="43px" width="43px">'); break ;  
 		}
+		
 	}
 }
+
+
 document.write("</table>"); 
+
+$([class^="pionNoir"]).on("mouseover", function(){ 
+	$(this).addClass("rouge");
+});
+
 
 //à faire 
 //gestion du clic et du déplacement et voilà c fini
