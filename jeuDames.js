@@ -27,6 +27,11 @@ for (var i=0 ; i<10 ; i++) {
 document.write("</table>"); 
 
 
+$('[class^="pionNoir"]').on("mouseover", function(){ 
+	console.log("yo");
+	$(this).addClass("rouge");
+});
+
 /*$([class^="pionNoir"]).on("mouseover", function(){ 
 	$(this).addClass("rouge");
 });*/
