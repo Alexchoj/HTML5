@@ -26,13 +26,8 @@ for (var i=0 ; i<10 ; i++) {
 
 document.write("</table>"); 
 
-<<<<<<< HEAD
-=======
-$([class^="pionNoir"]).on("mouseover", function(){ 
+
+/*$([class^="pionNoir"]).on("mouseover", function(){ 
 	$(this).addClass("rouge");
-});
+});*/
 
-
-//à faire 
-//gestion du clic et du déplacement et voilà c fini
->>>>>>> origin/master
