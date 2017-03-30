@@ -22,3 +22,6 @@ for (var i=0 ; i<10 ; i++) {
 	}
 }
 document.write("</table>"); 
+
+//à faire 
+//gestion du clic et du déplacement et voilà c fini
