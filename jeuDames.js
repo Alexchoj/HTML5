@@ -41,9 +41,9 @@ $(document).ready(function(){
 	plateau += "</table>"; 
 	$('h1').append(plateau);
 
+	/*
 	$(".noir").on("mouseover", function(){ 
 		$(this).addClass("vert");
-		
 	});
 
 	$(".blanc").on("mouseover", function(){ 
@@ -57,19 +57,13 @@ $(document).ready(function(){
 	$(".blanc").on("mouseout", function(){ 
 		$(this).removeClass("vert");
 	});
+	*/
+	$(".noir").on("mouseover", function(){ 
+		console.log("yo");
+	 	$(this).addClass("rouge");
+ 	});
+ 
 
-	/*$([class^="pionNoir"]).on("mouseover", function(){ 
-		$(this).addClass("rouge");
-	});*/
-
-$('[class^="pionNoir"]').on("click", function(){ 
-	$(this).addClass("vert");
-
-});
-
-$('[class^="pionBlanc"]').on("click", function(){ 
-	$(this).addClass("rouge");
-});
 
 
 });
