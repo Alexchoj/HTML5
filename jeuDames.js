@@ -26,9 +26,33 @@ for (var i=0 ; i<10 ; i++) {
 
 document.write("</table>"); 
 
-
+var n=0; 
 $('[class^="pionNoir"]').on("click", function(){ 
 	$(this).addClass("vert");
+	n++;
+    if (n == 5) {
+        n = 1;
+    }
+    if (n == 1) {
+        $(this).animate({
+            'top': '-=50'
+        });
+    }
+    if (n == 2) {
+        $(this).animate({
+            'left': '+=50'
+        });
+    }
+    if (n == 3) {
+        $(this).animate({
+            'top': '+=50'
+        });
+    }
+    if (n == 4) {
+        $(this).animate({
+            'left': '-=50'
+        });
+    }
 
 });
 
