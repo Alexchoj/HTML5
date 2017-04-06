@@ -22,16 +22,7 @@ $(document).ready(function(){
 	html += "</table>";
 
 	$("#plateau").append(html);
-	/*
-	$('[class^="pionNoir"]').on("click", function(){ 
-		$(this).addClass("vert");
-	});
 
-
-	$('[class^="pionBlanc"]').on("click", function(){ 
-		$(this).addClass("rouge");
-	});
-	*/
 	$('[class^="pionNoir"]').on("mouseover", function(){ 
 		$(this).addClass("vert");
 		console.log($(this).attr("class")[8]);
@@ -52,13 +43,4 @@ $(document).ready(function(){
 	});
 
 
-	/*
-	$( ".pionNoir" ).draggable({
-		axis: "x"
-	});
-
-	$(".pionBlanc").droppable({
-		accept : "td"
-	})
-	*/
 });
