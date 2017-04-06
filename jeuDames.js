@@ -1,5 +1,5 @@
 $(document).ready(function(){
-<<<<<<< HEAD
+
 	var plateau = "<table>"; 
 	for (var i=0 ; i<10 ; i++) {
 		plateau += "<tr>"; 
@@ -51,18 +51,17 @@ $(document).ready(function(){
 					html += "<img class=pionNoir"+(i+1)+(j+1)+" src=pionNoir.png></td>";
 				}else if(i>5){
 					html += "<img class=pionBlanc"+(i+1)+(j+1)+" src=pionBlanc.png></td>";
-				}
-				
+				}	
 			}
 		}
-	html += "</tr>";
-}
-html += "</table>";
+		html += "</tr>";
+	}
+	html += "</table>";
 
-$("#plateau").append(html);
+	$("#plateau").append(html);
 
 
-	/*
+	
 	$(".noir").on("mouseover", function(){ 
 		$(this).addClass("vert");
 	});
@@ -79,21 +78,22 @@ $("#plateau").append(html);
 	$(".blanc").on("mouseout", function(){ 
 		$(this).removeClass("vert");
 	});
-	*/
-	$(".noir").on("mouseover", function(){ 
-		console.log("yo");
-	 	$(this).addClass("rouge");
- 	});
  
 
 
 
-$("img").draggable({
-	revert: "invalid"
-});
 
-$("img").droppable({
-	accept : "td"
-})
+
+
+
+
+
+	$("img").drageable({
+		revert: "invalid"
+	});
+
+	$("img").droppable({
+		accept : "td"
+	})
 
 });
