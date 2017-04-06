@@ -1,5 +1,4 @@
 $(document).ready(function(){
-<<<<<<< HEAD
 	var plateau = "<table>"; 
 	for (var i=0 ; i<10 ; i++) {
 		plateau += "<tr>"; 
