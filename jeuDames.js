@@ -25,21 +25,31 @@ $(document).ready(function(){
 
 	$('[class^="pionNoir"]').on("mouseover", function(){ 
 		$(this).addClass("vert");
-		console.log($(this).attr("class")[8]);
-		console.log($(this).attr("class")[9]);
-		$('[class^="pionNoir'+($(this).attr("class")[8]+1)+($(this).attr("class")[9]+1)+'"').addClass("vert");
+		
+		var i=Number($(this).attr("class")[8])+1;
+		var j=Number($(this).attr("class")[9])+1;
+		$("#"+(i+j)).addClass("vert");
 	});
 
 	$('[class^="pionBlanc"]').on("mouseover", function(){ 
 		$(this).addClass("vert");
+		var i=Number($(this).attr("class")[9])+1;
+		var j=Number($(this).attr("class")[10])+1;
+		$("#"+(i+j)).addClass("vert");
 	});
 
 	$('[class^="pionNoir"]').on("mouseout", function(){ 
 		$(this).removeClass("vert");
+		var i=Number($(this).attr("class")[8])+1;
+		var j=Number($(this).attr("class")[9])+1;
+		$("#"+(i+j)).removeClass("vert");
 	});
 
 	$('[class^="pionBlanc"]').on("mouseout", function(){ 
 		$(this).removeClass("vert");
+		var i=Number($(this).attr("class")[9])+1;
+		var j=Number($(this).attr("class")[10])+1;
+		$("#"+(i+j)).removeClass("vert");
 	});
 
 
