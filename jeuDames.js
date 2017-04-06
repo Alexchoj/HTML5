@@ -31,37 +31,5 @@ $(document).ready(function(){
 	$('[class^="pionBlanc"]').on("click", function(){ 
 		$(this).addClass("rouge");
 	});
-	
-	$(".noir").on("mouseover", function(){ 
-		$(this).addClass("vert");
-	});
-
-	$(".blanc").on("mouseover", function(){ 
-		$(this).addClass("vert");
-	});
-
-	$(".noir").on("mouseout", function(){ 
-		$(this).removeClass("vert");
-	});
-
-	$(".blanc").on("mouseout", function(){ 
-		$(this).removeClass("vert");
-	});
  
-	$("img").drageable({
-		revert: "invalid"
-	});
-
-	$("img").droppable({
-		accept : "td"
-	})
-
-	$( ".pionNoir" ).draggable({
-		axis: "x"
-	});
-
-	$(".pionBlanc").droppable({
-		accept : "td"
-	})
-
 });
