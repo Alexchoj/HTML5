@@ -22,7 +22,7 @@ $(document).ready(function(){
 	html += "</table>";
 
 	$("#plateau").append(html);
-
+	/*
 	$('[class^="pionNoir"]').on("click", function(){ 
 		$(this).addClass("vert");
 	});
@@ -31,31 +31,28 @@ $(document).ready(function(){
 	$('[class^="pionBlanc"]').on("click", function(){ 
 		$(this).addClass("rouge");
 	});
-	
-	$(".noir").on("mouseover", function(){ 
+	*/
+	$('[class^="pionNoir"]').on("mouseover", function(){ 
+		$(this).addClass("vert");
+		console.log($(this).attr("class")[8]);
+		console.log($(this).attr("class")[9]);
+		$('[class^="pionNoir'+($(this).attr("class")[8]+1)+($(this).attr("class")[9]+1)+'"').addClass("vert");
+	});
+
+	$('[class^="pionBlanc"]').on("mouseover", function(){ 
 		$(this).addClass("vert");
 	});
 
-	$(".blanc").on("mouseover", function(){ 
-		$(this).addClass("vert");
-	});
-
-	$(".noir").on("mouseout", function(){ 
+	$('[class^="pionNoir"]').on("mouseout", function(){ 
 		$(this).removeClass("vert");
 	});
 
-	$(".blanc").on("mouseout", function(){ 
+	$('[class^="pionBlanc"]').on("mouseout", function(){ 
 		$(this).removeClass("vert");
 	});
- 
-	$("img").drageable({
-		revert: "invalid"
-	});
 
-	$("img").droppable({
-		accept : "td"
-	})
 
+	/*
 	$( ".pionNoir" ).draggable({
 		axis: "x"
 	});
@@ -63,5 +60,5 @@ $(document).ready(function(){
 	$(".pionBlanc").droppable({
 		accept : "td"
 	})
-
+	*/
 });
