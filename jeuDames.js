@@ -34,6 +34,9 @@ $(document).ready(function(){
 	*/
 	$('[class^="pionNoir"]').on("mouseover", function(){ 
 		$(this).addClass("vert");
+		console.log($(this).attr("class")[8]);
+		console.log($(this).attr("class")[9]);
+		$('[class^="pionNoir'+($(this).attr("class")[8]+1)+($(this).attr("class")[9]+1)+'"').addClass("vert");
 	});
 
 	$('[class^="pionBlanc"]').on("mouseover", function(){ 
