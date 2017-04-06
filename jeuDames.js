@@ -35,7 +35,7 @@ $(document).ready(function(){
 	});
 
 	$('[class^="pionBlanc"]').on("mouseover", function(){ 
-		$(this).addClass("vert");
+		$(this).addClass("rouge");
 		var i=Number($(this).attr("class")[9]);
 		var j=Number($(this).attr("class")[10]);
 		$("#"+(i-1)+""+(j+1)).addClass("rouge");
