@@ -25,13 +25,12 @@ $(document).ready(function(){
 
 	$('[class^="pionNoir"]').on("mouseover", function(){ 
 		$(this).addClass("vert");
-		console.log($(this).attr("class")[8]);
-		console.log($(this).attr("class")[9]);
+		console.log($(this).attr("class")[8],$(this).attr("class")[9] );
 		$('[class^="pionNoir'+($(this).attr("class")[8]+1)+($(this).attr("class")[9]+1)+'"').addClass("vert");
 	});
 
 	$('[class^="pionBlanc"]').on("mouseover", function(){ 
-		$(this).addClass("vert");
+		$(this).addClass("rouge");
 	});
 
 	$('[class^="pionNoir"]').on("mouseout", function(){ 
@@ -39,7 +38,7 @@ $(document).ready(function(){
 	});
 
 	$('[class^="pionBlanc"]').on("mouseout", function(){ 
-		$(this).removeClass("vert");
+		$(this).removeClass("rouge");
 	});
 
 
