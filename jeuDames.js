@@ -6,9 +6,9 @@ $(document).ready(function(){
 		html += "<tr>";
 		for(var j=0; j<10; j++){
 			if((i+j)%2 == 0){
-				html += "<td class=beige id="+(i+j)+">";
+				html += "<td class=beige id="+(i+1)+(j+1)+">";
 			}else{
-				html += "<td class=marron id="+(i+j)+">";
+				html += "<td class=marron id="+(i+1)+(j+1)+">";
 				if(i<4){
 					html += "<img class=pionNoir"+(i+1)+(j+1)+" src=pionNoir.png></td>";
 				}else if(i>5){
@@ -26,30 +26,34 @@ $(document).ready(function(){
 	$('[class^="pionNoir"]').on("mouseover", function(){ 
 		$(this).addClass("vert");
 		
-		var i=Number($(this).attr("class")[8])+1;
-		var j=Number($(this).attr("class")[9])+1;
-		$("#"+(i+j)).addClass("vert");
+		var i=Number($(this).attr("class")[8]);
+		var j=Number($(this).attr("class")[9]);
+		$("#"+(i+1)+""+(j+1)).addClass("vert");
+		$("#"+(i+1)+""+(j-1)).addClass("vert");
 	});
 
 	$('[class^="pionBlanc"]').on("mouseover", function(){ 
 		$(this).addClass("vert");
-		var i=Number($(this).attr("class")[9])+1;
-		var j=Number($(this).attr("class")[10])+1;
-		$("#"+(i+j)).addClass("vert");
+		var i=Number($(this).attr("class")[9]);
+		var j=Number($(this).attr("class")[10]);
+		$("#"+(i-1)+""+(j+1)).addClass("vert");
+		$("#"+(i-1)+""+(j-1)).addClass("vert");
 	});
 
 	$('[class^="pionNoir"]').on("mouseout", function(){ 
 		$(this).removeClass("vert");
-		var i=Number($(this).attr("class")[8])+1;
-		var j=Number($(this).attr("class")[9])+1;
-		$("#"+(i+j)).removeClass("vert");
+		var i=Number($(this).attr("class")[8]);
+		var j=Number($(this).attr("class")[9]);
+		$("#"+(i+1)+""+(j+1)).removeClass("vert");
+		$("#"+(i+1)+""+(j-1)).removeClass("vert");
 	});
 
 	$('[class^="pionBlanc"]').on("mouseout", function(){ 
 		$(this).removeClass("vert");
-		var i=Number($(this).attr("class")[9])+1;
-		var j=Number($(this).attr("class")[10])+1;
-		$("#"+(i+j)).removeClass("vert");
+		var i=Number($(this).attr("class")[9]);
+		var j=Number($(this).attr("class")[10]);
+		$("#"+(i-1)+""+(j+1)).removeClass("vert");
+		$("#"+(i-1)+""+(j-1)).removeClass("vert");
 	});
 
 
