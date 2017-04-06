@@ -11,11 +11,11 @@ Actuellement le projet valide : (barrer ce qui n'est pas encore implémenter et 
 #Fonctionnalités
 ~~Un échiquier de 10x10 s'affiche~~
 ~~Les pions sont au bon endroit~~
-~~On peut déplacer les pions~~
-~~seulement aux endroits où c'est possible~~
-~~On peut "prendre" un pion adverse en le "sautant"~~
+On peut déplacer les pions
+seulement aux endroits où c'est possible
+On peut "prendre" un pion adverse en le "sautant"
 
 #Plus
-~~une vidéo du jeu est sur la page de présentation et peut se lire (préciser le navigateur avec lequel cela fonctionne~~
-~~Le site est joli, équilibré au niveau des couleurs et des boutons~~
+une vidéo du jeu est sur la page de présentation et peut se lire (préciser le navigateur avec lequel cela fonctionne
+Le site est joli, équilibré au niveau des couleurs et des boutons
 
