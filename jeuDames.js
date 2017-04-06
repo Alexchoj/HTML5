@@ -22,9 +22,10 @@ html += "</table>";
 
 $("#plateau").append(html);
 
-var n=0; 
+
 $('[class^="pionNoir"]').on("click", function(){ 
 	$(this).addClass("vert");
+
 
 });
 
@@ -32,11 +33,12 @@ $('[class^="pionBlanc"]').on("click", function(){
 	$(this).addClass("rouge");
 });
 
-$("img").draggable({
-	revert: "invalid"
+$( ".pionNoir" ).draggable({
+  axis: "x"
 });
 
-$("img").droppable({
+
+$(".pionBlanc").droppable({
 	accept : "td"
 })
 
