@@ -6,9 +6,9 @@ $(document).ready(function(){
 		html += "<tr>";
 		for(var j=0; j<10; j++){
 			if((i+j)%2 == 0){
-				html += "<td class=beige id="+(i+j)+">";
+				html += "<td class=beige id="+(i+1)+(j+1)+">";
 			}else{
-				html += "<td class=marron id="+(i+j)+">";
+				html += "<td class=marron id="+(i+1)+(j+1)+">";
 				if(i<4){
 					html += "<img class=pionNoir"+(i+1)+(j+1)+" src=pionNoir.png></td>";
 				}else if(i>5){
@@ -26,19 +26,32 @@ $(document).ready(function(){
 	$('[class^="pionNoir"]').on("mouseover", function(){ 
 		$(this).addClass("vert");
 		console.log($(this).attr("class")[8],$(this).attr("class")[9] );
-		$('[class^="pionNoir'+($(this).attr("class")[8]+1)+($(this).attr("class")[9]+1)+'"').addClass("vert");
+		var i=Number($(this).attr("class")[8])+1;
+		var j=Number($(this).attr("class")[9])+1;
+		$("#"+(i+j)).addClass("vert");
 	});
 
 	$('[class^="pionBlanc"]').on("mouseover", function(){ 
+		console.log($(this).attr("class")[8],$(this).attr("class")[9] );
 		$(this).addClass("rouge");
+		var i=Number($(this).attr("class")[9])+1;
+		var j=Number($(this).attr("class")[10])+1;
+		$("#"+(i+j)).addClass("rouge");
+
 	});
 
 	$('[class^="pionNoir"]').on("mouseout", function(){ 
 		$(this).removeClass("vert");
+		var i=Number($(this).attr("class")[8])+1;
+		var j=Number($(this).attr("class")[9])+1;
+		$("#"+(i+j)).removeClass("vert");
 	});
 
 	$('[class^="pionBlanc"]').on("mouseout", function(){ 
 		$(this).removeClass("rouge");
+		var i=Number($(this).attr("class")[9])+1;
+		var j=Number($(this).attr("class")[10])+1;
+		$("#"+(i+j)).removeClass("rouge");
 	});
 
 
