@@ -38,8 +38,8 @@ $(document).ready(function(){
 		$(this).addClass("vert");
 		var i=Number($(this).attr("class")[9]);
 		var j=Number($(this).attr("class")[10]);
-		$("#"+(i-1)+""+(j+1)).addClass("vert");
-		$("#"+(i-1)+""+(j-1)).addClass("vert");
+		$("#"+(i-1)+""+(j+1)).addClass("rouge");
+		$("#"+(i-1)+""+(j-1)).addClass("rouge");
 	});
 
 	$('[class^="pionNoir"]').on("mouseout", function(){ 
@@ -51,11 +51,11 @@ $(document).ready(function(){
 	});
 
 	$('[class^="pionBlanc"]').on("mouseout", function(){ 
-		$(this).removeClass("vert");
+		$(this).removeClass("rouge");
 		var i=Number($(this).attr("class")[9]);
 		var j=Number($(this).attr("class")[10]);
-		$("#"+(i-1)+""+(j+1)).removeClass("vert");
-		$("#"+(i-1)+""+(j-1)).removeClass("vert");
+		$("#"+(i-1)+""+(j+1)).removeClass("rouge");
+		$("#"+(i-1)+""+(j-1)).removeClass("rouge");
 	});
 
 
