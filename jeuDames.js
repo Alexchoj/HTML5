@@ -23,13 +23,24 @@ $(document).ready(function(){
 
 	$("#plateau").append(html);
 
-	$('[class^="pionNoir"]').on("click", function(){ 
+	$('[class^="pionNoir"]').on("mouseover", function(){ 
+		$(this).addClass("vert");
+		console.log($(this).attr("class")[8]);
+		console.log($(this).attr("class")[9]);
+		$('[class^="pionNoir'+($(this).attr("class")[8]+1)+($(this).attr("class")[9]+1)+'"').addClass("vert");
+	});
+
+	$('[class^="pionBlanc"]').on("mouseover", function(){ 
 		$(this).addClass("vert");
 	});
 
-
-	$('[class^="pionBlanc"]').on("click", function(){ 
-		$(this).addClass("rouge");
+	$('[class^="pionNoir"]').on("mouseout", function(){ 
+		$(this).removeClass("vert");
 	});
- 
+
+	$('[class^="pionBlanc"]').on("mouseout", function(){ 
+		$(this).removeClass("vert");
+	});
+
+
 });
