@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+	var plateau = "<table>"; 
 	var html = "<table class=plateau>";
 	for(var i=0; i<10; i++){
 		html += "<tr>";
@@ -16,22 +16,20 @@ $(document).ready(function(){
 				
 			}
 		}
+	}
 	html += "</tr>";
-}
 html += "</table>";
 
 $("#plateau").append(html);
 
-
 $('[class^="pionNoir"]').on("click", function(){ 
 	$(this).addClass("vert");
-
-
 });
 
 $('[class^="pionBlanc"]').on("click", function(){ 
 	$(this).addClass("rouge");
 });
+
 
 $( ".pionNoir" ).draggable({
   axis: "x"
