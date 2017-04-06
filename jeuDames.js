@@ -28,7 +28,9 @@ $(document).ready(function(){
 		
 		var i=Number($(this).attr("class")[8]);
 		var j=Number($(this).attr("class")[9]);
-		$("#"+(i+1)+""+(j+1)).addClass("vert");
+		if (($("#"+(i+1)+""+(j+1)).attr("class")!='["pion"]')){
+			$("#"+(i+1)+""+(j+1)).addClass("vert");
+		}
 		$("#"+(i+1)+""+(j-1)).addClass("vert");
 	});
 
