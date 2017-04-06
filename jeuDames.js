@@ -24,36 +24,52 @@ $(document).ready(function(){
 	$("#plateau").append(html);
 
 	$('[class^="pionNoir"]').on("mouseover", function(){ 
-		$(this).addClass("vert");
 		
 		var i=Number($(this).attr("class")[8]);
 		var j=Number($(this).attr("class")[9]);
-		if (($("#"+(i+1)+""+(j+1)).attr("class")!='["pion"]')){
+
+		$('#'+i+''+j).addClass("vert");
+
+		if (($("#"+(i+1)+""+(j+1)).children().length<1)){
 			$("#"+(i+1)+""+(j+1)).addClass("vert");
 		}
-		$("#"+(i+1)+""+(j-1)).addClass("vert");
+		if (($("#"+(i+1)+""+(j-1)).children().length<1)){
+			$("#"+(i+1)+""+(j-1)).addClass("vert");
+		}
 	});
 
 	$('[class^="pionBlanc"]').on("mouseover", function(){ 
-		$(this).addClass("vert");
 		var i=Number($(this).attr("class")[9]);
 		var j=Number($(this).attr("class")[10]);
-		$("#"+(i-1)+""+(j+1)).addClass("rouge");
-		$("#"+(i-1)+""+(j-1)).addClass("rouge");
+
+		$('#'+i+''+j).addClass("rouge");
+
+		if (($("#"+(i-1)+""+(j+1)).children().length<1)){
+			$("#"+(i-1)+""+(j+1)).addClass("rouge");
+		}
+		if (($("#"+(i-1)+""+(j-1)).children().length<1)){
+			$("#"+(i-1)+""+(j-1)).addClass("rouge");
+		}
 	});
 
 	$('[class^="pionNoir"]').on("mouseout", function(){ 
-		$(this).removeClass("vert");
+		
 		var i=Number($(this).attr("class")[8]);
 		var j=Number($(this).attr("class")[9]);
+
+		$('#'+i+''+j).removeClass("vert");
+
 		$("#"+(i+1)+""+(j+1)).removeClass("vert");
 		$("#"+(i+1)+""+(j-1)).removeClass("vert");
 	});
 
 	$('[class^="pionBlanc"]').on("mouseout", function(){ 
-		$(this).removeClass("rouge");
+		
 		var i=Number($(this).attr("class")[9]);
 		var j=Number($(this).attr("class")[10]);
+
+		$('#'+i+''+j).removeClass("rouge");
+
 		$("#"+(i-1)+""+(j+1)).removeClass("rouge");
 		$("#"+(i-1)+""+(j-1)).removeClass("rouge");
 	});
