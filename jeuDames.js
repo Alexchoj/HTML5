@@ -299,7 +299,7 @@ $(document).ready(function(){
 		
 	});
 	
-	$('[class^="vertLock"]').on("mouseover", function(){ 
+	$('[class^="vertLock"]').on("click", function(){ 
 		console.log("yes");
 		$(this).parent().addClass('[class^="pionNoir"]');
 	});
@@ -307,7 +307,6 @@ $(document).ready(function(){
 	$('[class^="pionBlanc"]').on("click", function(){ 
 
 		$(this).parent().removeClass("rouge");
-		//$('[class^="vertLock"]').removeClass("vertLock");
 		$('[class^="selected"]').removeClass("selected");;
 		$(this).parent().addClass("selected");
 		
@@ -370,5 +369,10 @@ $(document).ready(function(){
 		
 	});
 
+	$('[class^="rougeLock"]').on("click", function(){ 
+		console.log("yes");
+		$(this).parent().removeClass('[class^="rougeLock"]');
+		$(this).parent().addClass('[class^="pionBlanc"]');
+	});
 	
 });
