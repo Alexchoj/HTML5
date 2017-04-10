@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	var plateau = "<table>"; 
+	//var plateau = "<table>"; 
 	var html = "<table class=plateau>";
 	for(var i=0; i<10; i++){
 		html += "<tr>";
@@ -248,10 +248,10 @@ $(document).ready(function(){
 	$('[class^="pionNoir"]').on("click", function(){ 
 		$(this).parent().removeClass("vert");
 		//$('[class^="vertLock"]').removeClass("vertLock");
-		$('[class^="selected"]').removeClass("selected");;
+		$('[class="selected"]').removeClass("selected");;
 		$(this).parent().addClass("selected");
 		
-		var i=Number($(this).attr("class")[8]);			
+		var i=Number($(this).attr("class")[8]);
 		var j=Number($(this).attr("class")[9]);
 		var k=Number($(this).attr("class")[10]);
 
@@ -295,14 +295,17 @@ $(document).ready(function(){
 			}
 		}
 
-		
+		tmp=$(this);
+
+		$(".vertLock").on("click",function(){
+			tmp.remove();
+			console.log("yes");
+			$(this).addClass('[class^="pionNoir"]');
+		});
 		
 	});
 	
-	$('[class^="vertLock"]').on("mouseover", function(){ 
-		console.log("yes");
-		$(this).parent().addClass('[class^="pionNoir"]');
-	});
+	
 
 	$('[class^="pionBlanc"]').on("click", function(){ 
 
