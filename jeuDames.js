@@ -261,7 +261,7 @@ $(document).ready(function(){
 		if(k==0){
 
 			if (($("#"+(i+1)+"9").children().length<1)){
-				$("#"+(i+1)+"9").addClass("vertLock");
+				var vertLock1=$("#"+(i+1)+"9").addClass("vertLock");
 			}
 			
 
@@ -269,20 +269,20 @@ $(document).ready(function(){
 
 
 			if (($("#"+(i+1)+""+(j+1)).children().length<1)){
-				$("#"+(i+1)+""+(j+1)).addClass("vertLock");
+				var vertLock1=$("#"+(i+1)+""+(j+1)).addClass("vertLock");
 			}
 			if (($("#"+(i+1)+""+(j-1)).children().length<1)){
-				$("#"+(i+1)+""+(j-1)).addClass("vertLock");
+				var vertLock2=$("#"+(i+1)+""+(j-1)).addClass("vertLock");
 			}
 
 		}else if (i==1){
 
 
 			if (($("#"+(i+1)+''+(j+1)).children().length<1)){
-				$("#"+(i+1)+''+(j+1)).addClass("vertLock");
+				var vertLock1=$("#"+(i+1)+''+(j+1)).addClass("vertLock");
 			}
 			if (($("#"+(i+1)+''+(j-1)).children().length<1)){
-				$("#"+(i+1)+''+(j-1)).addClass("vertLock");
+				var vertLock2=$("#"+(i+1)+''+(j-1)).addClass("vertLock");
 			}
 		} else {
 
@@ -331,10 +331,10 @@ $(document).ready(function(){
 
 
 			if (($("#"+(i-1)+"9").children().length<1)){
-				$("#"+(i-1)+"9").addClass("rougeLock");
+				var rougeLock1 = $("#"+(i-1)+"9").addClass("rougeLock");
 			}
 			
-			$('#'+i+''+j+'0').addClass("rougeLock");
+			//$('#'+i+''+j+'0').addClass("rougeLock");
 
 		}else if(j==1){
 
@@ -342,48 +342,59 @@ $(document).ready(function(){
 
 			j=Number($(this).attr("class")[11]);
 			if (($("#"+"9"+(j-1)).children().length<1)){
-				$("#"+"9"+(j-1)).addClass("rougeLock");
+				var rougeLock1 = $("#"+"9"+(j-1)).addClass("rougeLock");
 			}
 			
 			if (($("#"+"9"+(j+1)).children().length<1)){
-				$("#"+"9"+(j+1)).addClass("rougeLock");
+				var rougeLock2 = $("#"+"9"+(j+1)).addClass("rougeLock");
 			}
 
 
-			$('#'+i+'1').addClass("rougeLock");
+			//$('#'+i+'1').addClass("rougeLock");
 		}else if (j==0 && k%2!=0){
 
 
 
-			$("#"+"10"+k).addClass("rougeLock");
+			//$("#"+"10"+k).addClass("rougeLock");
 			if (($("#"+"9"+(k-1)).children().length<1)){
-				$("#"+"9"+(k-1)).addClass("rougeLock");
+				var rougeLock1 =  $("#"+"9"+(k-1)).addClass("rougeLock");
 			}
 			if (($("#"+"9"+(k+1)).children().length<1)){
-				$("#"+"9"+(k+1)).addClass("rougeLock");
+				var rougeLock2 = $("#"+"9"+(k+1)).addClass("rougeLock");
 			}
 		} else {
 
 
 
 			if (($("#"+(i-1)+""+(j+1)).children().length<1)){
-				$("#"+(i-1)+""+(j+1)).addClass("rougeLock");
+				var rougeLock1 = $("#"+(i-1)+""+(j+1)).addClass("rougeLock");
 			}
 			if (($("#"+(i-1)+""+(j-1)).children().length<1)){
-				$("#"+(i-1)+""+(j-1)).addClass("rougeLock");
+				var rougeLock2 = $("#"+(i-1)+""+(j-1)).addClass("rougeLock");
 			}
 
 
-			$("#"+(i)+""+(j)).addClass("rougeLock");
+			//$("#"+(i)+""+(j)).addClass("rougeLock");
 
 		}
 
-		$(".rougeLock").on("click", function(){ 
-			console.log("yes");
-			$(this).parent().removeClass('[class^="rougeLock"]');
-			$(this).parent().addClass('[class^="pionBlanc"]');
+		tmp=$(this);
+
+		$(".rougeLock").on("click",function(){
+			tmp.parent().removeClass("selected");
+			tmp.remove();
+			var numCase=Number($(this).attr("id")[0]+$(this).attr("id")[1]);
+			$(this).addClass('[class^="pionBlanc'+numCase+'"]');
+
+			var html="";
+			html+="<img class=pionBlanc"+numCase+" src=pionBlanc.png></td>";
+
+			$(this).append(html);
+
+			rougeLock1.removeClass("rougeLock");
+			rougeLock2.removeClass("rougeLock");
+
 		});
-		
 	});
 
 	
