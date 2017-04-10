@@ -310,51 +310,63 @@ $(document).ready(function(){
 		//$('[class^="vertLock"]').removeClass("vertLock");
 		$('[class^="selected"]').removeClass("selected");;
 		$(this).parent().addClass("selected");
-		/*
-		var i=Number($(this).attr("class")[8]);			
-		var j=Number($(this).attr("class")[9]);
-		var k=Number($(this).attr("class")[10]);
-
-
 		
-	
-		if(k==0){
+		var i=Number($(this).attr("class")[9]);			
+		var j=Number($(this).attr("class")[10]);
+		var k=Number($(this).attr("class")[11]);
 
-			if (($("#"+(i+1)+"9").children().length<1)){
-				$("#"+(i+1)+"9").addClass("vertLock");
+
+	
+		if (k==0){
+
+
+			if (($("#"+(i-1)+"9").children().length<1)){
+				$("#"+(i-1)+"9").addClass("rougeLock");
 			}
 			
+			$('#'+i+''+j+'0').addClass("rougeLock");
 
-		}else if (j==1){
+		}else if(j==1){
 
 
-			if (($("#"+(i+1)+""+(j+1)).children().length<1)){
-				$("#"+(i+1)+""+(j+1)).addClass("vertLock");
+
+			j=Number($(this).attr("class")[11]);
+			if (($("#"+"9"+(j-1)).children().length<1)){
+				$("#"+"9"+(j-1)).addClass("rougeLock");
 			}
-			if (($("#"+(i+1)+""+(j-1)).children().length<1)){
-				$("#"+(i+1)+""+(j-1)).addClass("vertLock");
+			
+			if (($("#"+"9"+(j+1)).children().length<1)){
+				$("#"+"9"+(j+1)).addClass("rougeLock");
 			}
 
-		}else if (i==1){
+
+			$('#'+i+'1').addClass("rougeLock");
+		}else if (j==0 && k%2!=0){
 
 
-			if (($("#"+(i+1)+''+(j+1)).children().length<1)){
-				$("#"+(i+1)+''+(j+1)).addClass("vertLock");
+
+			$("#"+"10"+k).addClass("rougeLock");
+			if (($("#"+"9"+(k-1)).children().length<1)){
+				$("#"+"9"+(k-1)).addClass("rougeLock");
 			}
-			if (($("#"+(i+1)+''+(j-1)).children().length<1)){
-				$("#"+(i+1)+''+(j-1)).addClass("vertLock");
+			if (($("#"+"9"+(k+1)).children().length<1)){
+				$("#"+"9"+(k+1)).addClass("rougeLock");
 			}
 		} else {
 
 
-			if (($("#"+(i+1)+""+(j+1)).children().length<1)){
-				$("#"+(i+1)+""+(j+1)).addClass("vertLock");
+
+			if (($("#"+(i-1)+""+(j+1)).children().length<1)){
+				$("#"+(i-1)+""+(j+1)).addClass("rougeLock");
 			}
-			if (($("#"+(i+1)+""+(j-1)).children().length<1)){
-				$("#"+(i+1)+""+(j-1)).addClass("vertLock");
+			if (($("#"+(i-1)+""+(j-1)).children().length<1)){
+				$("#"+(i-1)+""+(j-1)).addClass("rougeLock");
 			}
+
+
+			$("#"+(i)+""+(j)).addClass("rougeLock");
+
 		}
-		*/
 		
 	});
 
