@@ -288,31 +288,32 @@ $(document).ready(function(){
 
 
 			if (($("#"+(i+1)+""+(j+1)).children().length<1)){
-				$("#"+(i+1)+""+(j+1)).addClass("vertLock");
+				var vertLock1=$("#"+(i+1)+""+(j+1)).addClass("vertLock");
 			}
 			if (($("#"+(i+1)+""+(j-1)).children().length<1)){
-				$("#"+(i+1)+""+(j-1)).addClass("vertLock");
+				var vertLock2=$("#"+(i+1)+""+(j-1)).addClass("vertLock");
 			}
 		}
 
 		tmp=$(this);
 
 		$(".vertLock").on("click",function(){
+			tmp.parent().removeClass("selected");
 			tmp.remove();
-			console.log("yes");
-			$(this).addClass('[class^="pionNoir"]');
+			var numCase=Number($(this).attr("id")[0]+$(this).attr("id")[1]);
+			$(this).addClass('[class^="pionNoir'+numCase+'"]');
+
+			var html="";
+			html+="<img class=pionNoir"+numCase+" src=pionNoir.png></td>";
+
+			$(this).append(html);
+
+			vertLock1.removeClass("vertLock");
+			vertLock2.removeClass("vertLock");
 		});
 		
 	});
 	
-<<<<<<< HEAD
-	
-=======
-	$('[class^="vertLock"]').on("click", function(){ 
-		console.log("yes");
-		$(this).parent().addClass('[class^="pionNoir"]');
-	});
->>>>>>> origin/master
 
 	$('[class^="pionBlanc"]').on("click", function(){ 
 
@@ -376,13 +377,15 @@ $(document).ready(function(){
 			$("#"+(i)+""+(j)).addClass("rougeLock");
 
 		}
+
+		$(".rougeLock").on("click", function(){ 
+			console.log("yes");
+			$(this).parent().removeClass('[class^="rougeLock"]');
+			$(this).parent().addClass('[class^="pionBlanc"]');
+		});
 		
 	});
 
-	$('[class^="rougeLock"]').on("click", function(){ 
-		console.log("yes");
-		$(this).parent().removeClass('[class^="rougeLock"]');
-		$(this).parent().addClass('[class^="pionBlanc"]');
-	});
+	
 	
 });
